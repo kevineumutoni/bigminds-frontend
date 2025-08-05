@@ -1,0 +1,190 @@
+
+ .signin-container {
+ 
+  display: flex;
+  min-height: 100vh;
+  font-family: nunito;
+} 
+
+@font-face {
+    font-family: nunito;
+    src: url('../../public/assets/Nunito-VariableFont_wght.ttf');
+}
+.left-panel
+{
+  flex: 1 1 50%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.right-panel {
+  flex: 1 1 50%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left-panel {
+  background: #13182D;
+  align-items: center;
+}
+.left-panel .logo {
+  width: 60%;
+}
+
+.right-panel {
+  background: #fff;
+  align-items: center;
+  padding: 40px;
+  box-shadow: 0 0 32px 0 rgba(19,24,45,0.08);
+
+}
+
+.right-panel h2 {
+  font-size: 40px;
+  color: #13182D;
+  margin-bottom: 3rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+form {
+  width: 100%;
+  max-width: 400px;
+}
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  font-size: 1.1rem;
+  color: #13182d;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: 500;
+}
+
+.username-input, .password-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fafafa;
+}
+
+.country-code {
+  border: none;
+  background: #fff;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: #13182D;
+  font-weight: 500;
+  outline: none;
+}
+
+.username-number-input,
+.password-input input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 1rem;
+  background: transparent;
+  padding: 0.75rem 1rem;
+  color: #2b2b2b;
+}
+
+.password-input {
+  position: relative;
+}
+.show-password {
+  background: none;
+  border: none;
+  color: #13182D;
+  font-size: 1.3rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+.show-password:hover {
+  color: #003A2A;
+}
+
+.form-links {
+  justify-items: end;
+  margin-bottom: 1.5rem;
+}
+.forget-password {
+  color: #13182D;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.forget-password:hover {
+  text-decoration: underline;
+}
+
+.create-account {
+  width: 100%;
+  padding: 0.85rem 0;
+  color: #fff;
+  background: #13182D;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+
+.right-panel p {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 1rem;
+}
+.right-panel p a {
+  color: #003A2A;
+  text-decoration: none;
+  font-weight: 500;
+}
+.right-panel p a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .signup-container {
+    flex-direction: column;
+  }
+  .left-panel,
+  .right-panel {
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    min-height: 200px;
+    padding: 2rem 0;
+  }
+  .right-panel {
+    padding: 24px;
+    align-items: center;
+  }
+  form {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .right-panel {
+    padding: 12px;
+  }
+  .right-panel h2 {
+    font-size: 2rem;
+  }
+  .left-panel .logo {
+    max-width: 180px;
+  }
+}

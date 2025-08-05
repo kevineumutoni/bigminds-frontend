@@ -1,0 +1,459 @@
+@font-face {
+  font-family: nunito;
+}
+
+.team-container {
+  padding: 2rem;
+  font-family: 'nunito';
+  color: #fff;
+}
+
+.team-container[data-theme="light"] {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: white;
+}
+
+.team-container[data-theme="light"] header h1 {
+  color: #111111;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #c5baba;
+  margin-top: 0.4rem;
+}
+
+.team-container[data-theme="light"] header p {
+  color: #555;
+}
+
+.table-wrapper {
+  margin-top: 2rem;
+  overflow-x: auto;
+}
+
+.team-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.06);
+}
+
+.team-table th,
+.team-table td {
+  padding: 1rem;
+  border-bottom: 3px solid #13182D;
+  background-color: #19213D;
+  text-align: center;
+  color: #fff;
+}
+
+.team-container[data-theme="light"] .team-table th,
+.team-container[data-theme="light"] .team-table td {
+  background-color: #fff;
+  border-bottom: 1.5px solid #d8cbcb;
+  color: #000000;
+}
+
+.team-table th {
+  font-size: 14px;
+  background-color: #48038C;
+  color: white;
+  border-bottom: 3px solid #13142D;
+}
+
+.team-container[data-theme="light"] .team-table th {
+  background-color: #b992d3;
+  color: #111111;
+  border-bottom: 1px solid #999;
+}
+
+.badge.admin {
+  background-color: #04D99D;
+  color: #0073e6;
+  padding: 0.4rem 1.3rem;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+
+.badge.manager {
+  background-color: #0073e6;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+
+
+
+.filters-controls {
+  margin-bottom: 25px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.filters-controls input {
+  padding: 12px 16px;
+  height: 60px;
+  border-radius: 8px;
+  background-color: transparent;
+  border: #888 solid 2px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  color: #fff;
+  outline: none;
+}
+
+.team-container[data-theme="light"] .filters-controls input {
+  border-color: #aaa;
+  background-color: #fff;
+  color: #222;
+}
+
+.filters-controls input::placeholder {
+  color: #888;
+  transition: opacity 0.2s ease;
+}
+
+.team-container[data-theme="light"] .filters-controls input::placeholder {
+  color: #666;
+}
+
+.filters-controls input:focus::placeholder {
+  opacity: 0;
+}
+
+.filters-controls input:focus {
+  border: none;
+}
+
+.filters-controls select {
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 15px;
+  padding-right: 35px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.team-container[data-theme="light"] .filters-controls select {
+  color: #222;
+}
+
+.custom-dropdown {
+  width: 200px;
+  position: relative;
+  height: 60px;
+}
+
+.dropdown-selected {
+  padding: 12px 16px;
+  height: 60px;
+  border-radius: 8px;
+  background-color: transparent;
+  border: #888 solid 2px;
+  font-size: 14px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.team-container[data-theme="light"] .dropdown-selected {
+  background-color: #fff;
+  border-color: #726a6a;
+  color: #222;
+}
+
+
+
+.dropdown-selected.open {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  background: #222;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  color: #fff;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.team-container[data-theme="light"] .dropdown-list {
+  background: #f9f9f9;
+  color: #222;
+}
+
+.dropdown-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  background: transparent;
+  color: #fff;
+  transition: background 0.2s;
+}
+
+.team-container[data-theme="light"] .dropdown-item {
+  background: transparent;
+  color: #222;
+}
+
+.dropdown-item.selected,
+.dropdown-item:hover {
+  background: #444;
+}
+
+.team-container[data-theme="light"] .dropdown-item.selected,
+.team-container[data-theme="light"] .dropdown-item:hover {
+  background: #ddd;
+}
+
+.dropdown-item:not(:last-child) {
+  border-bottom: 1px solid #333;
+}
+
+.dropdown-selected span {
+  color: #888;
+  font-size: 18px;
+  pointer-events: none;
+  margin-left: 10px;
+}
+
+.dropdown-selected:active,
+.dropdown-selected:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 820px){
+  
+  .filters-controls {
+    margin-bottom: 2px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .filters-controls input {
+    padding: 16px;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+  }
+
+  .filters-controls input::placeholder {
+    font-size: 0.8rem;
+  }
+
+  .custom-dropdown {
+    height: 40px;
+  }
+
+  .dropdown-selected {
+    height: 40px;
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+
+  .team-container {
+    margin-top: -5%;
+    padding: 5px;
+    padding-left: 20px;
+    font-family: 'nunito';
+  }
+
+  header h1 {
+    font-size: 1.3rem;
+  }
+
+  header p {
+    font-size: 0.7rem;
+  }
+
+  .table-wrapper {
+    margin-top: 1rem;
+    overflow-x: auto;
+  }
+
+  .team-table {
+    width: 90%;
+    border-collapse: collapse;
+  }
+
+  .team-table td {
+    padding: 0.3rem;
+    font-size: 12px;
+    border-bottom: 2px solid #13142D;
+  }
+
+  .team-table th {
+    padding: 0.3rem;
+    font-size: 13px;
+  }
+
+  .badge.admin {
+    padding: 0.4rem 1.15rem;
+    font-size: 0.7rem;
+  }
+
+  .badge.manager {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
+  }
+
+  .filters-controls {
+    margin-bottom: 2px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .filters-controls input {
+    padding: 16px;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+
+  }
+
+  .filters-controls input::placeholder {
+    font-size: 0.8rem;
+  }
+
+  .custom-dropdown {
+    height: 40px;
+  }
+
+  .dropdown-selected {
+    height: 40px;
+    font-size: 13px;
+  }
+}
+
+
+
+@media only screen and (min-width: 1025px) and (max-width:1280px) {
+
+  .team-container {
+    padding-left: 10px;
+    padding: 5px;
+    font-family: 'nunito';
+  }
+
+  header h1 {
+    font-size: 1.7rem;
+    margin-top: 2%;
+    color: white;
+  }
+
+  header p {
+    font-size: 1.1rem;
+    color: #c5baba;
+    margin-top: 0rem;
+  }
+
+  .table-wrapper {
+    margin-top: 1rem;
+    overflow-x: auto;
+  }
+
+   .team-table td {
+    padding: 0.3rem;
+    font-size: 12px;
+    border-bottom: 2px solid #13142D;
+  }
+
+  .team-table th {
+    padding: 0.3rem;
+    font-size: 13px;
+  }
+
+  .badge.admin {
+    padding: 0.4rem 1.15rem;
+    font-size: 1.1rem;
+  }
+
+  .badge.manager {
+    padding: 0.4rem 0.8rem;
+    font-size: 1.1rem;
+  }
+
+  .filters-controls {
+    margin-bottom: 2px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .filters-controls input {
+    padding: 16px;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+
+  }
+
+  .filters-controls input::placeholder {
+    font-size: 0.8rem;
+  }
+
+  .custom-dropdown {
+    height: 40px;
+  }
+
+  .dropdown-selected {
+    height: 40px;
+    font-size: 13px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .filters-controls {
+    flex-direction: column;
+  }
+
+  .filters-controls input {
+    width: 100%;
+  }
+
+  .dashboard-gauges {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .filters-controls {
+    flex-direction: column;
+  }
+
+  .filters-controls input {
+    width: 100%;
+  }
+
+  .dashboard-gauges {
+    flex-direction: column;
+  }
+}

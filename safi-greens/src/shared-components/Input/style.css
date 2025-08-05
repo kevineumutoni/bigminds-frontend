@@ -1,0 +1,61 @@
+.label{
+    font-size: 20px;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 0.3em;
+}
+
+.input{
+    padding: 1em 16em 1em 1em;
+    margin-bottom: 1em;
+    border: #1D2740 1px solid;
+    border-radius: 5px;
+    background-color: none;
+    display: block;
+}
+
+.custom-input{
+    justify-items: center;
+    position: relative;
+}
+
+.error-message{
+    justify-self: left;
+    color:rgb(155, 37, 37);
+    margin-top: -12px;
+    font-size: 12px;
+}
+
+.eye-icon{
+    position: absolute;
+    top: 25%;
+    left:90%
+}
+
+@media only screen and (max-width:450px){
+    .input{
+        padding: 1em 5em 1em 1em;
+    }
+    .label{
+        font-size: 15px;
+        padding-right: 5em;
+    }
+    .custom-label{
+        margin-left: 0em;
+    }
+    .error-message{
+        margin-left: 0em;
+    }
+}
+
+@media only screen and (min-width:451px) and (max-width:700px){
+    .input{
+        padding: 1em 15em 1em 1em;
+    }
+}
+
+@media only screen and (min-width:701px) and (max-width:850px){
+    .input{
+        padding: 1em 10em 1em 1em;
+    }
+}

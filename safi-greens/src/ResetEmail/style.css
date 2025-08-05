@@ -1,0 +1,121 @@
+body{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    color:#1D2740;
+    font-family: nunito;
+}
+
+.email-container{
+    display: flex;
+    justify-content: space-evenly;
+    height: 100vh;
+}
+
+.logo-container{
+    background-color: #1D2740;
+    justify-items: center;
+    align-content: center;
+    width: 50%;
+}
+
+.email-input-container{
+    width: 50%;
+    justify-items: center;
+    align-content: center;
+    background-color: white;
+    color:#1D2740;
+}
+
+.button-group{
+    display: flex;
+    gap:50px;
+    margin-top: 2em;
+}
+
+.reset-logo{
+    width: 70%;
+    display: block;
+}
+
+.email-input{
+    justify-items: center;
+}
+
+.input-header{
+    font-size: 50px;
+}
+
+@font-face {
+    font-family: nunito;
+    src: url('../../public/assets/Nunito-VariableFont_wght.ttf');
+  }
+
+@media only screen and (max-width:450px) {
+    html, body{
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    .email-container{
+        justify-items: center;
+        flex-direction: column;
+        height: auto;
+        width: 100vw;
+    }   
+    .logo-container{
+        height: 30vh;
+        width: 100%;
+    } 
+    .email-input-container{
+        width: 100%;
+        justify-items: center;
+        align-content: center;
+        height: 70vh;
+    }
+   
+    .input-header{
+        font-size: 35px;
+    }
+
+    .button-group{
+        flex-direction: column-reverse;
+        gap:20px;
+    }
+}
+
+@media only screen and (min-width:451px) and (max-width:700px) {
+    html, body{
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    .email-container{
+        justify-items: center;
+        flex-direction: column;
+        height: auto;
+        width: 100vw;
+    }   
+    .logo-container{
+        height: 30vh;
+        width: 100%;
+    } 
+    .email-input-container{
+        width: 100%;
+        justify-items: center;
+        align-content: center;
+        height: 70vh;
+    }
+   
+    .input-header{
+        font-size: 35px;
+    }
+
+}
+
+@media only screen and (min-width:701px) and (max-width:850px){
+    .button-group{
+        gap:10px;
+    }
+    .input-header{
+        font-size: 40px;
+    }
+}

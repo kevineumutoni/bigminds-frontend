@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.button{
+    padding: 1em 5em;
+    border:none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.shop-now{
+    background-color: white;
+    color:#1D2740;
+    font-weight: bolder;
+    border-radius: 0;
+    font-size: 16px;
+}
+
+.cancel,
+.cancel-reset{
+    border:#1D2740 1px solid;
+    background-color: none;
+    color:#1D2740;
+}
+
+.continue-reset{
+    background-color: #1D2740;
+    color:white;
+
+}
+
+@media only screen and (max-width:450px){
+.cancel-reset,
+.continue-reset{
+    padding: 1em 8em;
+}
+}
+
+@media only screen and (min-width:451px) and (max-width:700px){
+    .cancel-reset,
+.continue-reset
+      {
+     padding: 1em 4.6em;}
+} 
+
+@media only screen and (min-width:701px) and (max-width:850px){
+.cancel-reset,
+.continue-reset
+      {
+     padding: 1em 4em;}
+
+}

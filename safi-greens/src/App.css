@@ -1,0 +1,90 @@
+body{
+  font-family: nunito;
+  height: 100vh;
+  overflow-y: hidden;
+}
+.App {
+  text-align: center;
+}
+.app {
+   display: flex; 
+   height: 100vh; 
+   overflow: hidden; }
+
+.content { 
+  flex: 1; 
+  height: 100vh; 
+  overflow-y: auto; }
+
+.table-container { 
+  font-family: 'nunito', sans-serif; }
+
+.table { 
+  height: 130vh; 
+  overflow-y: auto; }
+
+.product-table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  background-color: #19213D; 
+  color: white; }
+
+.table-head { 
+  background-color: #48038C;
+ }
+
+@font-face {
+  font-family: nunito;
+  src: url('../public/Nunito-Italic-VariableFont_wght.ttf');
+}
+.table-head-cell { 
+  font-size: 14px; 
+  color: white; 
+  border-bottom: 3px solid #13142D; 
+  text-align: center; 
+  padding: 1rem; }
+
+.table-body-cell { 
+  padding: 1rem; 
+  border-bottom: 3px solid #13142D; 
+  background-color: transparent; 
+  text-align: center; 
+  vertical-align: middle; 
+  font-size: 14px; 
+  color: #ddd; }
+
+.product-image { 
+  width: 36px; 
+  height: 36px; 
+  border-radius: 4px; 
+  object-fit: cover; 
+  vertical-align: middle; 
+  flex-shrink: 0; 
+  margin-right: 6%; }
+
+.product-name { 
+  vertical-align: middle; 
+  color: white; }
+
+.table-body-row:hover { 
+  background-color: #2f3263; 
+  cursor: pointer; }
+
+.loading-container { 
+  text-align: center; 
+  margin-top: 2rem; 
+  color: #ccc; }
+
+.loading-text { 
+  margin-top: 1rem; 
+  color: #ccc; }
+
+.error-text { 
+  color: #ff4d4f; 
+  text-align: center; 
+  margin-top: 2rem; }
+
+@media screen and (max-width: 600px) {
+   .table-container { 
+    overflow-x: auto; 
+  } }
