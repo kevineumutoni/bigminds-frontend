@@ -1,14 +1,28 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
-import { Chart, LineElement, PointElement, CategoryScale, LinearScale, Title, Tooltip, Legend } from "chart.js";
+import {
+  Chart,
+  LineElement,
+  PointElement,
+  CategoryScale,
+  LinearScale,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import { useTheme } from "@mui/material";
+import { tokens } from "../../../theme"; // Adjust path if needed
+
 Chart.register(LineElement, PointElement, CategoryScale, LinearScale, Title, Tooltip, Legend);
 
 export default function UserGrowthChart({ users }) {
-  console.log("UserGrowthChart users:", users); // Debug line
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
 
+  // Group by year-month
   const counts = {};
   users.forEach(u => {
-    if (!u.created_at) return; // Skip if no date
+    if (!u.created_at) return;
     const date = new Date(u.created_at);
     const key = `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,"0")}`;
     counts[key] = (counts[key] || 0) + 1;
@@ -23,8 +37,8 @@ export default function UserGrowthChart({ users }) {
         label: "New Users",
         data: dataPoints,
         fill: false,
-        borderColor: "#00e396",
-        backgroundColor: "#00e396",
+        borderColor: colors.greenAccent[400],
+        backgroundColor: colors.greenAccent[400],
         tension: 0.4,
         pointRadius: 4,
       }
@@ -35,17 +49,35 @@ export default function UserGrowthChart({ users }) {
     responsive: true,
     plugins: {
       legend: { display: false },
-      title: { display: false }
+      title: { display: false },
+      tooltip: {
+        backgroundColor: theme.palette.mode === "dark"
+          ? colors.primary[500]
+          : colors.primary[100],
+        titleColor: colors.grey[100],
+        bodyColor: colors.grey[100],
+      },
     },
     scales: {
-      x: { ticks: { color: "#fff" }, grid: { color: "rgba(255,255,255,0.05)" }},
+      x: {
+        ticks: { color: colors.grey[100] },
+        grid: {
+          color: theme.palette.mode === "dark"
+            ? "rgba(255,255,255,0.05)"
+            : "rgba(0,0,0,0.07)",
+        }
+      },
       y: {
         ticks: {
-          color: "#fff",
+          color: colors.grey[100],
           stepSize: 1,
-          callback: (value) => Number.isInteger(value) ? value : null
+          callback: value => Number.isInteger(value) ? value : null
         },
-        grid: { color: "rgba(255,255,255,0.08)" }
+        grid: {
+          color: theme.palette.mode === "dark"
+            ? "rgba(255,255,255,0.08)"
+            : "rgba(0,0,0,0.09)",
+        }
       }
     }
   };
