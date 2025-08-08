@@ -6,7 +6,6 @@ import { Chart, BarController, BarElement, CategoryScale, LinearScale, Title } f
 
 Chart.register(BarController, BarElement, CategoryScale, LinearScale, Title);
 
-
 export default function ProductAnalytics({ data }) {
   const safeData = Array.isArray(data) ? data : [];
 

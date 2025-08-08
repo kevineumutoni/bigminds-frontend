@@ -11,9 +11,7 @@ import {
 } from "chart.js";
 import { useTheme } from "@mui/material";
 import { tokens } from "../../../theme"; 
-
 Chart.register(BarElement, CategoryScale, LinearScale, Title, Tooltip, Legend);
-
 export default function TopVendorsChart({ users }) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);

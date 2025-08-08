@@ -11,7 +11,7 @@ import {
   Legend,
 } from "chart.js";
 import { useTheme } from "@mui/material";
-import { tokens } from "../../../theme"; // Adjust path if needed
+import { tokens } from "../../../theme"; 
 
 Chart.register(LineElement, PointElement, CategoryScale, LinearScale, Title, Tooltip, Legend);
 
@@ -19,7 +19,7 @@ export default function UserGrowthChart({ users }) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
-  // Group by year-month
+  
   const counts = {};
   users.forEach(u => {
     if (!u.created_at) return;

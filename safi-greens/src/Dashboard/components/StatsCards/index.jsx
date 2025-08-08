@@ -5,8 +5,6 @@ import Typography from '@mui/material/Typography';
 import { useTheme } from "@mui/material";
 import { tokens } from '../../../theme';
 import PersonIcon from '@mui/icons-material/Person';
-
-
 export default function StatsCards({ stats }) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);

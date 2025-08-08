@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import { Box, Typography, TextField, MenuItem, FormControl, InputLabel, Select } from "@mui/material";
+import {
+  Box,
+  Typography,
+  TextField,
+  MenuItem,
+  FormControl,
+  InputLabel,
+  Select,
+  Button
+} from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../theme";
 import { useTheme } from "@mui/material";
@@ -18,6 +27,9 @@ const Contacts = () => {
   const [search, setSearch] = useState("");
   const [typeFilter, setTypeFilter] = useState("");
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [rowsPerPage, setRowsPerPage] = useState(5); 
+
   const filteredUsers = users.filter((user) => {
     if (typeFilter && user.user_type !== typeFilter) return false;
     const searchValue = search.toLowerCase();
@@ -28,6 +40,19 @@ const Contacts = () => {
       (user.phone_number?.toLowerCase().includes(searchValue))
     );
   });
+
+  const totalPages = Math.ceil(filteredUsers.length / rowsPerPage);
+  const paginatedUsers = filteredUsers.slice(
+    (currentPage - 1) * rowsPerPage,
+    currentPage * rowsPerPage
+  );
+
+  const handlePrev = () => setCurrentPage((prev) => Math.max(prev - 1, 1));
+  const handleNext = () => setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+  const handlePageSizeChange = (e) => {
+    setRowsPerPage(Number(e.target.value));
+    setCurrentPage(1);
+  };
 
   const columns = baseColumns.map((col) =>
     col.field === "user_type"
@@ -52,7 +77,6 @@ const Contacts = () => {
         </Typography>
       </Box>
 
-      
       <Box mb={2} display="flex" gap={2} flexWrap="wrap">
         <TextField
           label="Search by name, address, till number, or phone number"
@@ -97,7 +121,6 @@ const Contacts = () => {
           )}
           <Box
             sx={{
-              height: 600,
               "& .MuiDataGrid-root": { border: "none" },
               "& .MuiDataGrid-cell": { borderBottom: "none" },
               "& .MuiDataGrid-columnHeaders": {
@@ -106,13 +129,6 @@ const Contacts = () => {
               },
               "& .MuiDataGrid-virtualScroller": {
                 backgroundColor: colors.primary?.[400] || "#fff",
-              },
-              "& .MuiDataGrid-footerContainer": {
-                borderTop: "none",
-                backgroundColor: colors.blueAccent?.[700] || "#1976d2",
-                position: "relative",
-                top: "-32px",
-                zIndex: 1,
               },
               "& .MuiCheckbox-root": {
                 color: `${colors.greenAccent?.[200] || "#4caf50"} !important`,
@@ -124,17 +140,60 @@ const Contacts = () => {
             }}
           >
             <DataGrid
-              rows={filteredUsers}
+              rows={paginatedUsers}
               columns={columns}
               slots={{ toolbar: GridToolbar }}
               loading={loading}
               getRowId={(row) => row.id}
-              pageSize={5}
-              rowsPerPageOptions={[5,10, 20, 50]}
-              pagination
-              autoHeight={false}
+              autoHeight 
               disableColumnMenu={false}
+              hideFooter 
             />
+          </Box>
+          {/*  */}
+          <Box
+            display="flex"
+            alignItems="center"
+            justifyContent="space-between"
+            mt={2}
+            sx={{
+              backgroundColor: theme.palette.mode === "dark" ? "#3e4396" : "#a4a9fc",
+              padding: "8px",
+              borderRadius: "8px"
+            }}
+          >
+            <Typography>
+              Page {totalPages === 0 ? 0 : currentPage} of {totalPages}
+            </Typography>
+            <FormControl variant="outlined" size="small" sx={{ minWidth: 120 }}>
+              <InputLabel>Rows per page</InputLabel>
+              <Select
+                value={rowsPerPage}
+                onChange={handlePageSizeChange}
+                label="Rows per page"
+              >
+                {[5, 9, 15, 50].map((size) => (
+                  <MenuItem key={size} value={size}>{size}</MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+            <Box>
+              <Button
+                onClick={handlePrev}
+                disabled={currentPage === 1 || totalPages === 0}
+                variant="contained"
+                sx={{ mr: 1 }}
+              >
+                Prev
+              </Button>
+              <Button
+                onClick={handleNext}
+                disabled={currentPage === totalPages || totalPages === 0}
+                variant="contained"
+              >
+                Next
+              </Button>
+            </Box>
           </Box>
         </>
       )}

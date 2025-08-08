@@ -31,5 +31,3 @@ export default function SalesGraph({ salesHistory, period }) {
     </Card>
   );
 }
-
-
